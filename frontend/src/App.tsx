@@ -1,7 +1,12 @@
+import Header from "./components/header/header"
+import Igasum from "./components/igasum/igasum"
 
 function App() {
   return (
-    <h1> Ola mundo </h1>
+    <>
+      <Header />
+      <Igasum />
+    </>
   )
 
 }
