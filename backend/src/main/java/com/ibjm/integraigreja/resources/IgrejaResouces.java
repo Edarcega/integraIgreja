@@ -4,6 +4,8 @@ import com.ibjm.integraigreja.domain.Endereco;
 import com.ibjm.integraigreja.domain.Filho;
 import com.ibjm.integraigreja.domain.Igreja;
 import com.ibjm.integraigreja.domain.Usuario;
+import com.ibjm.integraigreja.domain.dto.IgrejaDTO;
+import com.ibjm.integraigreja.domain.dto.UsuarioDTO;
 import com.ibjm.integraigreja.domain.enums.StatusIgreja;
 import com.ibjm.integraigreja.services.EnderecoService;
 import com.ibjm.integraigreja.services.IgrejaService;
@@ -14,6 +16,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/igrejas")
@@ -29,6 +32,13 @@ public class IgrejaResouces {
     public ResponseEntity<List<Igreja>> consultarTodos() {
         List<Igreja> list = service.consultarTodos();
         return ResponseEntity.ok().body(list);
+    }
+
+    @GetMapping(value = "/igrejasdto")
+    public ResponseEntity<List<IgrejaDTO>> consultarTodosDTO() {
+        List<Igreja> list = service.consultarTodos();
+        List<IgrejaDTO> listDto = list.stream().map(x -> new IgrejaDTO(x)).collect(Collectors.toList());
+        return ResponseEntity.ok().body(listDto);
     }
 
     //@RequestMapping(value = "/{id}", method = RequestMethod.GET)
