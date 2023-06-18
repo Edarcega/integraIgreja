@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../../utils/request";
+import { BASE_URL_PAGES } from "../../utils/request";
 import { Igreja } from "../../models/igreja";
-import fotoigreja from '../../assets/img/igreja.jpg'
+import fotoigreja from '../../assets/img/church_icon.png'
 import { useParams } from "react-router-dom";
 
 
@@ -49,8 +50,8 @@ function igpainel() {
                                 Ações
                             </button>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a className="dropdown-item" href={`http://localhost:5173/#/igreja/${ig?.id}`}>Dados gerais</a>
-                                <a className="dropdown-item" href="#">Membros</a>
+                                <a className="dropdown-item" href={`${BASE_URL_PAGES}/#/igreja/${ig?.id}`}>Dados gerais</a>
+                                <a className="dropdown-item"href={`${BASE_URL_PAGES}/#/membros/${ig?.id}`}>Membros</a>
                                 <a className="dropdown-item" href="#">Grupos</a>
                                 <a className="dropdown-item" href="#">Classes</a>
                                 <a className="dropdown-item" href="#">Filiais</a>

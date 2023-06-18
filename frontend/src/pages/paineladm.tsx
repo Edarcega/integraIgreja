@@ -1,13 +1,13 @@
 import Header from "../components/header/header";
-import Paineladmpg from "../components/painaladm/paineladm";
+import Paineladm from "../components/painaladm/paineladm";
 
-function Paineladm() {
+function Paineladmpg() {
     return (
         <>
             <Header />
-            <Paineladmpg />
+            <Paineladm />
         </>
     )
 }
 
-export default Paineladm
+export default Paineladmpg

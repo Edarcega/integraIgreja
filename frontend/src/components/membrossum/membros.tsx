@@ -1,43 +1,52 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { BASE_URL } from "../../utils/request";
-import { IgrejaDto } from "../../models/igrejasdto";
-import { BASE_URL_PAGES } from "../../utils/request";
+import { BASE_URL, BASE_URL_PAGES } from "../../utils/request";
+import { useParams } from "react-router-dom";
+import { Igreja } from "../../models/igreja";
 
 
-function Igasum() {
-
-    const [igrejasDto, setIgrejasDto] = useState<IgrejaDto[]>([]);
 
 
+function membros() {
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [igreja, setIgreja] = useState<Igreja>();
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { id } = useParams();
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
-        axios.get(`${BASE_URL}/igrejas/igrejasdto`)
+        axios.get(`${BASE_URL}/igrejas/${id}`)
             .then(response => {
-                setIgrejasDto(response.data)
+                setIgreja(response.data)
+                console.log(response.data)
             })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 
+
     return (
-        <section className="container" id="tabela-igrejas-sumarizado">
+        <section className="container" id="tabela-membros-sumarizado">
             <div className="row justify-content-center">
                 <div className="container pt-3">
-                    <h1 className="text-center fonte-titulo-body pt-3">Painel cadastro de igrejas</h1>
+                    <h1 className="text-center fonte-titulo-body pt-3">Painel cadastro de Membros</h1>
                 </div>
                 <div className="table-responsive table-hover table-striped">
                     <table className="table">
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Nome da Igreja</th>
+                                <th scope="col">Nome Completo</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {igrejasDto.map(x => {
+                            {igreja?.membros.map(x => {
                                 return (
                                     <tr key={x.id}>
                                         <td>
-                                            <a href={`${BASE_URL_PAGES}/#/paineladmigreja/${x.id}`}>{x.id}</a>
+                                            <a href={`${BASE_URL_PAGES}/#/membro/${x.id}`}>{x.id}</a>
                                             {/* <a href={`${BASE_URL_PAGES}/paineladmigreja/${x.id}`}>{x.id}</a> */}
                                         </td>
                                         <td>{x.nome}</td>
@@ -50,7 +59,6 @@ function Igasum() {
             </div>
         </section>
     )
-
 }
 
-export default Igasum
+export default membros

@@ -1,4 +1,7 @@
 import igrejaicon from '../../assets/img/church_icon.png'
+import membroicon from '../../assets/img/membro_icon.png'
+import usericon from '../../assets/img/user_icon.png'
+import { BASE_URL_PAGES } from "../../utils/request";
 
 function Paineladm() {
     return (
@@ -21,14 +24,14 @@ function Paineladm() {
                         <div className="card-body">
                             <h5 className="card-title">Adm Igreja</h5>
                             <p className="card-text">Clique no botão abaixo para mais informações</p>
-                            <a href="http://localhost:5173/#/igrejas" className="btn btn-primary">Acessar</a>
+                            <a href={`${BASE_URL_PAGES}/#/igrejas`} className="btn btn-primary">Acessar</a>
                         </div>
                     </article>
 
                     <article className="card background-card article-card p-0 m-2 col-md-3">
                         <div className="row justify-content-center">
                             <div className="img-cad-dimension">
-                                <img className="card-img-top card-img-igreja" src={igrejaicon}
+                                <img className="card-img-top card-img-igreja" src={usericon}
                                     alt="Imagem de capa do card" />
                             </div>
                         </div>
@@ -43,7 +46,7 @@ function Paineladm() {
                     <article className="card background-card article-card p-0 m-2 col-md-3">
                         <div className="row justify-content-center">
                             <div className="img-cad-dimension">
-                                <img className="card-img-top card-img-igreja" src={igrejaicon}
+                                <img className="card-img-top card-img-igreja" src={membroicon}
                                     alt="Imagem de capa do card" />
                             </div>
                         </div>
