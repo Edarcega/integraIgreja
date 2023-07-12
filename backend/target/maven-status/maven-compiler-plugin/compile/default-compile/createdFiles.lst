@@ -24,6 +24,7 @@ com\ibjm\integraigreja\repositories\ClasseRepository.class
 com\ibjm\integraigreja\domain\Igreja.class
 com\ibjm\integraigreja\config\Instanciar.class
 com\ibjm\integraigreja\domain\dto\PaiMaeDTO.class
+com\ibjm\integraigreja\domain\enums\TipoGrupo.class
 com\ibjm\integraigreja\domain\Filial.class
 com\ibjm\integraigreja\domain\Usuario.class
 com\ibjm\integraigreja\domain\dto\MembroDTO.class
@@ -33,6 +34,7 @@ com\ibjm\integraigreja\resources\exception\ResourceExceptionHandler.class
 com\ibjm\integraigreja\services\EnderecoService.class
 com\ibjm\integraigreja\resources\GrupoResouces.class
 com\ibjm\integraigreja\repositories\GrupoRepository.class
+com\ibjm\integraigreja\domain\dto\GrupoDTO.class
 com\ibjm\integraigreja\resources\MembroResouces.class
 com\ibjm\integraigreja\repositories\MembroRepository.class
 com\ibjm\integraigreja\services\FuncaoService.class

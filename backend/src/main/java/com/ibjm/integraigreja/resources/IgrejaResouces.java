@@ -55,7 +55,7 @@ public class IgrejaResouces {
     }
 
     // Adptar o metodo de criação para quando o CEP não for encontrado
-    // Ou verificar se é possível sempre passar o endereço ou ainda as dudas coisas dependendo do cenário
+    // Ou verificar se é possível sempre passar o endereço ou ainda as duas coisas dependendo do cenario
     @PostMapping
     public ResponseEntity<Void> insert(@RequestBody Igreja igreja) {
         Endereco endereco = enderecoService.findByCep(igreja.getEndereço().getCep());

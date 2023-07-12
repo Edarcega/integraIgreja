@@ -12,7 +12,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class Membro {
     private String cpf;
     private String identidade;
     private Character sexo;
-    private Date dataDeNascimento;
+    private LocalDate dataDeNascimento;
     private String nascionalidade;
     private Endereco endereco;
     private String numero;
@@ -53,7 +55,13 @@ public class Membro {
     private String igrejaAnterior;
     private IgrejaDTO igreja;
     private TipoMembro tipoMembro;
+    @DBRef(lazy = true)
     private List<Funcao> funcoes = new ArrayList<>();
     private Usuario usuario;
+    public Date getIdade(){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(dataDeNascimento.);
+
+    }
 
 }

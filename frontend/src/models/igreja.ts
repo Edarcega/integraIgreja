@@ -83,36 +83,37 @@ export type Igreja = {
     ],
     "grupos": [
         {
-            "id": "646a12594743086e5c810f7e",
+            "id": "64a2d397b6ad7032c9e07475",
             "igreja": {
-                "id": "646a119f4743086e5c810f7c",
-                "nome": "Igreja Jardim Maracanã"
-            },
-            "lider": {
-                "id": "646a12234743086e5c810f7d",
-                "nome": "Edimar Árcega",
-                "tipoMembro": "MEMBRO"
-            },
-            "participantes": [
-                {
-                    "id": "646a12234743086e5c810f7d",
-                    "nome": "Edimar Árcega",
-                    "tipoMembro": "MEMBRO"
-                }
-            ],
-            "statusGrupo": "ATIVO",
-            "nome": "Resgate"
-        },
-        {
-            "id": "646a12624743086e5c810f7f",
-            "igreja": {
-                "id": "646a119f4743086e5c810f7c",
-                "nome": "Igreja Jardim Maracanã"
+                "id": "649f12f1537325637a6cceaa",
+                "nome": "Igreja Batista Jardim Maracanã"
             },
             "lider": null,
+            "viceLider": null,
             "participantes": [],
             "statusGrupo": "ATIVO",
-            "nome": "Prefácio"
+            "tipoGrupo": "DEPARTAMENTO",
+            "ministerio": {
+                "id": "649f398c3d28a4789dfb6635",
+                "igreja": {
+                    "id": "649f12f1537325637a6cceaa",
+                    "nome": "Igreja Batista Jardim Maracanã"
+                },
+                "lider": {
+                    "id": "649f3abd3d28a4789dfb663c",
+                    "nome": "EDIMAR DOS SANTOS ÁRCEGA",
+                    "tipoMembro": "FREQUENTANTE"
+                },
+                "viceLider": null,
+                "participantes": [],
+                "statusGrupo": "ATIVO",
+                "tipoGrupo": "MINISTERIO",
+                "ministerio": null,
+                "funcoes": [],
+                "nome": "SERVIÇOS"
+            },
+            "funcoes": [],
+            "nome": "Patrimonio"
         }
     ],
     "classes": [

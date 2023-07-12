@@ -5,7 +5,7 @@ export type Membro = {
     "cpf": string;
     "identidade": string;
     "sexo": string;
-    "dataDeNascimento": "1986-12-18T00:00:00.000+00:00";
+    "dataDeNascimento": string;
     "nascionalidade": string;
     "endereco": {
         "cep": string;
@@ -37,7 +37,7 @@ export type Membro = {
             "cpf": string;
             "identidade": string;
             "sexo": string;
-            "dataDeNascimento": string;
+            "dataDeNascimento": Date;
             "nascionalidade": string;
             "endereco": string;
             "numero": string;

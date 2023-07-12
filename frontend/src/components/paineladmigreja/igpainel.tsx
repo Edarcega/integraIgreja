@@ -10,7 +10,7 @@ import { useParams } from "react-router-dom";
 function igpainel() {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const {id} = useParams();
+    const { id } = useParams();
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [ig, setIgrejas] = useState<Igreja>();
@@ -22,7 +22,7 @@ function igpainel() {
                 setIgrejas(response.data)
                 console.log(response.data)
             })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -51,10 +51,10 @@ function igpainel() {
                             </button>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a className="dropdown-item" href={`${BASE_URL_PAGES}/#/igreja/${ig?.id}`}>Dados gerais</a>
-                                <a className="dropdown-item"href={`${BASE_URL_PAGES}/#/membros/${ig?.id}`}>Membros</a>
-                                <a className="dropdown-item" href="#">Grupos</a>
-                                <a className="dropdown-item" href="#">Classes</a>
-                                <a className="dropdown-item" href="#">Filiais</a>
+                                <a className="dropdown-item" href={`${BASE_URL_PAGES}/#/membros/${ig?.id}`}>Membros</a>
+                                <a className="dropdown-item" href={`${BASE_URL_PAGES}/#/grupos/${ig?.id}`}>Grupos</a>
+                                {/* <a className="dropdown-item" href="#">Classes</a> */}
+                                {/* <a className="dropdown-item" href="#">Filiais</a> */}
                             </div>
                         </div>
                     </div>

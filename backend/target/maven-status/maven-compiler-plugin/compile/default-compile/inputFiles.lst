@@ -11,6 +11,7 @@ C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\services\EnderecoService.java
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\domain\dto\ConjugeDTO.java
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\resources\GrupoResouces.java
+C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\domain\dto\GrupoDTO.java
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\domain\enums\StatusIgreja.java
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\resources\exception\ResourceExceptionHandler.java
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\domain\enums\TipoClasse.java
@@ -44,6 +45,7 @@ C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\resources\FilhoResouces.java
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\domain\enums\StatusClasse.java
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\domain\Pessoa.java
+C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\domain\enums\TipoGrupo.java
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\domain\enums\TipoMembro.java
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\IntegraigrejaApplication.java
 C:\Users\edima\Documents\Workspace\integraIgreja\backend\src\main\java\com\ibjm\integraigreja\domain\Classe.java

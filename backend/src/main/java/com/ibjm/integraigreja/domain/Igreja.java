@@ -46,6 +46,9 @@ public class Igreja implements Serializable {
     @DBRef(lazy = true)
     private List<Filial> filiais = new ArrayList<>();
 
+    @DBRef(lazy = true)
+    private  List<Usuario> usuarios = new ArrayList<>();
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

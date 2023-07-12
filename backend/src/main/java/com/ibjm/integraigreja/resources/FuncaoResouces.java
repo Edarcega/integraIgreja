@@ -1,9 +1,12 @@
 package com.ibjm.integraigreja.resources;
 
 import com.ibjm.integraigreja.domain.Funcao;
+import com.ibjm.integraigreja.domain.Grupo;
 import com.ibjm.integraigreja.domain.Usuario;
 import com.ibjm.integraigreja.domain.dto.IgrejaDTO;
+import com.ibjm.integraigreja.repositories.GrupoRepository;
 import com.ibjm.integraigreja.services.FuncaoService;
+import com.ibjm.integraigreja.services.GrupoService;
 import com.ibjm.integraigreja.services.IgrejaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +26,12 @@ public class FuncaoResouces {
     @Autowired
     private IgrejaService igrejaService;
 
+    @Autowired
+    private GrupoService grupoService;
+
+    @Autowired
+    GrupoRepository grupoRepository;
+
     @GetMapping
     public ResponseEntity<List<Funcao>> consultarTodos() {
         List<Funcao> list = service.consultarTodos();
@@ -40,7 +49,14 @@ public class FuncaoResouces {
     public ResponseEntity<Void> insert(@RequestBody Funcao funcao) {
         Funcao newFuncao = funcao;
         newFuncao.setIgreja(new IgrejaDTO(igrejaService.consultarPorId(funcao.getIgreja().getId())));
+
+        if (funcao.getEstrutura() != null) {
+            newFuncao.setEstrutura(grupoService.consultarPorId(funcao.getEstrutura().getId()));
+        }
         funcao = service.inserir(newFuncao);
+        Grupo grupo = grupoService.consultarPorId(funcao.getEstrutura().getId());
+        grupo.getFuncoes().add(funcao);
+        grupoRepository.save(grupo);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(funcao.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
@@ -56,6 +72,5 @@ public class FuncaoResouces {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
-
 
 }

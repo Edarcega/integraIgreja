@@ -2,6 +2,7 @@ package com.ibjm.integraigreja.services;
 
 import com.ibjm.integraigreja.domain.Classe;
 import com.ibjm.integraigreja.domain.Grupo;
+import com.ibjm.integraigreja.domain.dto.GrupoDTO;
 import com.ibjm.integraigreja.domain.dto.MembroDTO;
 import com.ibjm.integraigreja.repositories.GrupoRepository;
 import com.ibjm.integraigreja.services.exception.ObjectNotFoundException;
@@ -59,6 +60,13 @@ public class GrupoService {
         // Inserir validação se já há um participante com o ID em questão
         Grupo newGrupo = consultarPorId(id);
         newGrupo.setLider(new MembroDTO(membroService.consultarPorId(grupo.getLider().getId())));
+        return grupoRepository.save(newGrupo);
+    }
+
+    public Grupo inserirViceLider(String id, Grupo grupo) {
+        // Inserir validação se já há um participante com o ID em questão
+        Grupo newGrupo = consultarPorId(id);
+        newGrupo.setViceLider(new MembroDTO(membroService.consultarPorId(grupo.getLider().getId())));
         return grupoRepository.save(newGrupo);
     }
 

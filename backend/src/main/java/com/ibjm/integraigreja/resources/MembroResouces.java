@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -40,6 +41,7 @@ public class MembroResouces {
     @GetMapping(value = "/{id}")
     public ResponseEntity<Membro> consultarPorId(@PathVariable String id) {
         Membro membro = service.consultarPorId(id);
+        System.out.println(membro.getIdade());
         return ResponseEntity.ok().body(membro);
     }
 
@@ -48,11 +50,37 @@ public class MembroResouces {
         // Necessário criar os metodos de validação de campos obrigatórios
         Endereco endereco = enderecoService.findByCep(membro.getEndereco().getCep());
         Igreja igreja = igrejaService.consultarPorId(membro.getIgreja().getId());
+        LocalDate localDate;
 
-        Membro newMembro = new Membro(null, membro.getNome(), membro.getEmail(), membro.getCpf(), membro.getIdentidade(), membro.getSexo(), membro.getDataDeNascimento(), membro.getNascionalidade(), endereco, membro.getNumero(),
-                membro.getComplemento(), membro.getNomeDoPai(), membro.getNomeDaMae(), membro.getProfissao(), membro.getEstadoCivil(), membro.getConjuge(), membro.getDataDoCasamento(), membro.getPossuiFilhos(), membro.getPortadorDeNecessidadesEspeciais(),
-                membro.getDetalhamentoPne(), membro.getFilhos(), membro.getDataCadastro(), membro.getDataDaInscricao(), membro.getBatizado(), membro.getIgrejaAnterior(), new IgrejaDTO(igrejaService.consultarPorId(igreja.getId())),
-                membro.getTipoMembro(), membro.getFuncoes(), membro.getUsuario());
+        Membro newMembro = new Membro(null,
+                membro.getNome(),
+                membro.getEmail(),
+                membro.getCpf(),
+                membro.getIdentidade(),
+                membro.getSexo(),
+                localDate = membro.getDataDeNascimento(),
+                membro.getNascionalidade(),
+                endereco,
+                membro.getNumero(),
+                membro.getComplemento(),
+                membro.getNomeDoPai(),
+                membro.getNomeDaMae(),
+                membro.getProfissao(),
+                membro.getEstadoCivil(),
+                membro.getConjuge(),
+                membro.getDataDoCasamento(),
+                membro.getPossuiFilhos(),
+                membro.getPortadorDeNecessidadesEspeciais(),
+                membro.getDetalhamentoPne(),
+                membro.getFilhos(),
+                membro.getDataCadastro(),
+                membro.getDataDaInscricao(),
+                membro.getBatizado(),
+                membro.getIgrejaAnterior(),
+                new IgrejaDTO(igrejaService.consultarPorId(igreja.getId())),
+                membro.getTipoMembro(),
+                membro.getFuncoes(),
+                membro.getUsuario());
         membro = service.inserir(newMembro);
 
         igreja.getMembros().add(newMembro);

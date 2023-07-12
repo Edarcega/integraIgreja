@@ -25,6 +25,9 @@ function Mombrocompleto() {
 
     return (
         <>
+            <p>
+                {/* ARRUMAR ISSO AQUI, NAO PODE FICAR ASSIM*/}
+            </p>
             <section className="container" id="painel-membro-completo">
                 <div className="container-fluid">
                     <div className="card">
@@ -83,11 +86,11 @@ function Mombrocompleto() {
                                         </li>
                                         <li className="list-group-item">
                                             <h5>Data de Nascimento</h5>
-                                            <p>{membro?.dataDeNascimento}</p>
+                                            <p>{new Date(membro?.dataDeNascimento).toLocaleDateString('pt-BR', { timeZone: 'UTC' })}</p>
                                         </li>
                                         <li className="list-group-item">
                                             <h5>Data da Inscrição </h5>
-                                            <p>{membro?.dataDaInscricao}</p>
+                                            <p>{new Date(membro?.dataDeNascimento).toLocaleDateString('pt-BR', { timeZone: 'UTC' })}</p>
                                         </li>
                                         <li className="list-group-item">
                                             <h5>Batizado?</h5>
